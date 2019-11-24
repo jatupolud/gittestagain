@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html>
+<head><meta http-equiv="cache-control" content="no-cache"><meta http-equiv="Pragma" content="no-cache"><meta http-equiv="Expires" content="-1"><style type="text/css">* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Nunito Sans', sans-serif;
+  margin:0;
+}
+
+h1, h2, h3, h4 {line-height: 1em;}
+
+.container{
+  max-width: 1080px;
+  width:auto;
+  margin: 0 auto;
+}
+
+/* Style the header */
+header {
+  float: left;
+  padding: 20px;
+  width: 100%;
+  background-color: #1F365C;
+  height: 160px; /* only for demonstration, should be removed */
+  color: #ffffff;
+}
+header h1,h3 {letter-spacing: 3px;}
+header .image{
+  width: 140px;
+  float: left;
+  height: 300px;
+}
+header img{
+  width: 100%;
+}
+header .text{
+  width: 440px;
+  float: left;
+  padding-left: 20px;
+  padding-top: 40px;
+}
+header hr{
+  border: 1px solid #FFB535; 
+  width: 133px; 
+  float: left;
+}
+nav {
+  float: left;
+  width: 30%;
+  min-height: 1020px; /* only for demonstration, should be removed */
+  background: #F2F3F4;
+  padding: 20px;
+}
+nav img {
+    width: 100%;
+}
+nav hr {
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgb(255, 181, 53);
+    border-image: initial;
+}
+nav .fa {
+    font-size: 200%;
+    display: block;
+    padding: 20px 0px;
+}
+article {
+  float: left;
+  padding: 20px;
+  width: 70%;
+  background-color: #ffffff;
+  min-height: 1020px; /* only for demonstration, should be removed */
+}
+article li{cursor: pointer;}
+/* Clear floats after the columns */
+section:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.name {
+    text-align: center;
+    padding: 20px 0px;
+}
+.contact {
+    text-align: center;
+}
+.box-wrap {
+    height: auto;
+    width: 100%;
+}
+.box-wrap-sup {
+    border-top: 1px solid rgb(255, 181, 53);
+}
+.box-wrap-left {
+    float: left;
+    width: 25%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.box-wrap-right {
+    float: left;
+    width: 75%;
+    background-color: rgb(242, 243, 244);
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px dotted rgb(255, 181, 53);
+}
+footer {
+    background-color: rgb(31, 54, 92);
+    height: 20px;
+    border-bottom: 1px solid rgb(255, 181, 53);
+}
+.clear {
+    clear: both;
+}
+.l-pd {padding-left: 20px;}
+.l-pd span {
+    font-size: 90%
+}
+
+@media screen and (max-width: 1080px) {
+  .left, .main, .right {
+    width: 100%; /* The width is 100%, when the viewport is 800px or smaller */
+  }
+}
+
+</style>
+	
+	
+	<title>Dynamic Resume Page</title>
+	<meta charset="UTF-8">
+	<link href="https://fonts.googleapis.com/css?family=Nunito+Sans&amp;display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="css/style1.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script>
+	  function changeName(){
+	    let newName = prompt("Input Name : ");
+	    if(newName){
+	      document.getElementById('name-label').innerHTML = newName;
+	    }
+	  }
+	  
+	  function addTalent(){
+	    let countList = document.getElementById("countList").value;
+	        countList = parseInt(countList)+1;
+	    let newTalent = prompt("Input Talent : ");
+	    if(newTalent){
+	      let ul = document.getElementById("talent");
+	      let li = document.createElement("li");
+	      li.setAttribute("id","li-"+countList)
+	      li.innerHTML = newTalent+" <span class='fa fa-times-circle' onclick='removeTalent("+countList+")'></span>";
+	      ul.appendChild(li);
+	    }
+	  }
+	
+	  function removeTalent(objId){
+	    let txt;
+	    if (confirm("Confirm!")) {
+	      document.getElementById('li-'+objId).remove();
+	    } 
+	  }
+	
+	</script>
+	</head>
+	<body onmouseover="this.style.backgroundColor='#FFB535';" onmouseout="this.style.backgroundColor='#ffffff';" style="background-color: rgb(255, 255, 255);">
+	<div class="container">
+	<header>
+	  <h1><span id="name-label" onclick="changeName()" style="cursor: pointer;">JATUPOL UDOMPHOL</span></h1>
+
+	  <hr>
+	  <h3>&nbsp; Process Engineering</h3>
+	</header>
+	  
+	<section>
+	  <nav>
+	    <img src="images/MEIMG.JPG">
+	    <div class="name">
+	      <h2><span id="name-label" onclick="changeName()" style="cursor: pointer;"> Nickname: Joe </span></h2>
+	
+	    </div>
+	    <hr>
+	    <div class="contact">
+	      <i class="fa fa-phone-square"></i> 
+	      081-4510098
+	    </div>
+	    <div class="contact">
+	      <i class="fa fa-envelope"></i> 
+	      Jatupol_me@hotmail.com
+	      nunnapol@gmail.com
+	    </div>
+	
+
+	    
+	  </nav>
+	
+
+	  <article>
+	    
+	    <div class="box-wrap">
+	      <h1><i class="fa fa-graduation-cap"></i>  Education</h1>
+	      <div class="box-wrap-sup">
+	        <div class="box-wrap-left">2013 - 2015</div>
+	        <div class="box-wrap-right">
+	          <strong class="l-pd">College of Management Mahidol University </strong>
+	          <div class="l-pd">
+	
+	            Master’s Degree in Finance <br>
+	
+	          </div>
+	        </div>
+	        <div class="box-wrap-left">2000 - 2004</div>
+	        <div class="box-wrap-right">
+	          <strong class="l-pd">King Mongkut’s Institute of Technology North Bangkok </strong>
+	          <div class="l-pd">
+	            Bachelor’s Degree in Mechanical Engineering <br>
+	            
+	          </div>
+	        </div>
+	      </div>
+	    </div>
+	
+
+	    <div class="clear"></div>
+	    <div class="box-wrap">
+	      <h1><i class="fa fa-desktop"></i>  Work Experience</h1>
+	       <div class="box-wrap-sup">
+	        <div class="box-wrap-left"> 2019 –  Present </div>
+	        <div class="box-wrap-right">
+	          <div class="l-pd">
+	            <strong> Stars Microelectronics</strong><br>
+	            <strong> Process Engineering Section Manager </strong><br>
+	            <span> <br>
+o Responsible for EOL (Mold, Mark, Trim &amp; Form, and Package Singulation) process and all document related. <br>
+o Lead a team of engineers to conduct CI (Continuous Improvement), 5S, FMEA, and Six Sigma. <br>
+o Take respond and routine update for process quality, process yield, cycle time, productivity, process capability and quality improvement. <br>
+o Support customer audits such as On Semiconductor, Impinj, and Microchip. <br>
+	
+	          </span>
+	          </div>
+	        </div>
+	
+
+	        <div class="box-wrap-left">2010 - 2017</div>
+	        <div class="box-wrap-right">
+	          <div class="l-pd">
+	            <strong> NXP Manufacturing (Thailand) </strong><br>
+	            <strong>Senior Process Engineer</strong><br>
+	            <span><br>
+o Lead a team of engineers to solve problems in processes, such as DA (Die Attach), Snap cure, Mold. <br>
+o Lead a team to conduct CI (Continuous Improvement), 5S, FMEA, and Six Sigma. <br>
+o Support customer audits such as Denso, Continental, and Samsung. <br>
+o Address customer complaints (8D report). <br>
+o Support engineering &amp; qualification lots at DA and WB processes. <br>
+o Evaluate DA and WB parameters with new products. <br>
+o Find new tooling of DA and WB machines for support new products. <br>
+	
+	
+	          </span>
+	          </div>
+	        </div>
+	        <div class="box-wrap-left">2004 - 2010</div>
+	        <div class="box-wrap-right">
+	          <div class="l-pd">
+	            <strong>Sony Device Technology (Thailand)</strong><br>
+	            <strong>Assembly Engineer</strong><br>
+	            <span> <br>
+o Design and develop new packages with Sony (Japan). <br>
+o Design and develop new processes and materials to support new packages (APQP: Advance Product Quality Planning). <br>
+
+	            </span>
+	          </div>
+	        </div>
+	      </div>
+	    </div>
+	    
+	    <div class="clear"></div>
+	    <div class="box-wrap">
+	      <h1><i class="fa fa-magic"></i>  ความสามารถพิเศษ</h1>
+	       <div class="box-wrap-sup">
+	        <div class="box-wrap-left"></div>
+	        <div class="box-wrap-right" style="border-bottom: none;">
+	           <ul id="talent" style="padding-bottom: 0px; margin-bottom: 0px;">
+	            <li id="li-1">Microsoft Office (Word, Excel, PowerPoint, and
+Project)<span class="fa fa-times-circle" onclick="removeTalent(1)"></span></li>
+	            <li id="li-2">Minitab<span class="fa fa-times-circle" onclick="removeTalent(2)"></span></li>
+	            <li id="li-3">JMP and Stata <span class="fa fa-times-circle" onclick="removeTalent(3)"></span></li>
+	          </ul> 
+	        </div>
+	          <div class="box-wrap-left">&nbsp;</div>
+	          <div class="box-wrap-right">
+	            <div class="l-pd">
+	              <input type="hidden" id="countList" value="3">  
+	              <span class="fa fa-plus-circle" style="font-size: 200%" onclick="addTalent()"></span>
+	           </div>
+	          </div>
+	      </div>
+	    </div>
+	
+
+	  </article>
+	</section>
+	<footer></footer>
+	<div>
+	
+
+	
+	
+<script>// Write JavaScript here </script></div></div></body>
